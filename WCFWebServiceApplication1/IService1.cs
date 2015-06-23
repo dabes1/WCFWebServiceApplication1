@@ -29,6 +29,11 @@ namespace WCFWebServiceApplication1
         DataObject1 GetDataObject(string id);
 
 
+        [OperationContract]
+        [WebGet(UriTemplate = "State/{stateId}")]
+        StateObject GetStateInfoById(string stateId);
+
+
     }
 
 

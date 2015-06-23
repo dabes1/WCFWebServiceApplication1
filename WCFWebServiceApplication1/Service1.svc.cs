@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 // Added usings
+using WCFWebServiceApplication1.DataAccess;
 using WCFWebServiceApplication1.DataObjects;
 
 namespace WCFWebServiceApplication1
@@ -45,6 +46,17 @@ namespace WCFWebServiceApplication1
                 oList.Add(i);
 
             _out.ListInt = oList;
+
+            return _out;
+        }
+
+        public StateObject GetStateInfoById(string stateId)
+        {
+            StateObject _out = new StateObject();
+
+            _out.Id = Convert.ToInt32(stateId);
+            _out.Abrv = SQLAccess.GetAbr(_out.Id);
+            _out.Name = SQLAccess.GetName(_out.Id);
 
             return _out;
         }
