@@ -62,7 +62,7 @@ namespace WCFWebServiceApplication1
             _out.Abrv = SQLAccess.GetAbr(_out.Id);
             _out.Name = SQLAccess.GetName(_out.Id);
 
-            return _out;
+            return _out; 
         }
 
 
@@ -73,6 +73,7 @@ namespace WCFWebServiceApplication1
             _out.Id = Convert.ToInt32(stateId);
             _out.Abrv = SQLAccess.GetAbr(_out.Id);
             _out.Name = SQLAccess.GetName(_out.Id);
+            _out.StateList = SQLAccess.GetStatesList();
 
             return _out;
         }
@@ -84,6 +85,7 @@ namespace WCFWebServiceApplication1
             _out.Id = Convert.ToInt32(stateId);
             _out.Abrv = SQLAccess.GetAbr(_out.Id);
             _out.Name = SQLAccess.GetName(_out.Id);
+            _out.StateList = SQLAccess.GetStatesList();
 
             return _out;
         }

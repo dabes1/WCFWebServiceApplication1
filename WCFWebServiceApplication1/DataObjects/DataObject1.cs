@@ -33,6 +33,7 @@ namespace WCFWebServiceApplication1.DataObjects
         private int _id;
         private string _abrv;
         private string _name;
+        private List<string> _states;
 
         [DataMember]
         public int Id { get { return _id; } set { _id = value; } }
@@ -42,6 +43,11 @@ namespace WCFWebServiceApplication1.DataObjects
 
         [DataMember]
         public string Name { get { return _name; } set { _name = value; } }
+
+
+        [DataMember]
+        public List<string> StateList { get { return _states; } set { _states = value; } }
+
     }
 
 

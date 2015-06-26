@@ -70,5 +70,38 @@ namespace WCFWebServiceApplication1.DataAccess
             return null;
         }
 
+        public static List<string> GetStatesList()
+        {
+            List<string> _out = new List<string>();
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PrimaryDatabase"].ConnectionString);
+            con.Open();
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT DISTINCT name FROM States";
+
+                using (SqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    if (sdr != null && sdr.HasRows)
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Load(sdr);
+
+                        foreach (DataRow r in dt.Rows)
+                        {
+                            _out.Add(r["name"].ToString());
+                        }
+
+                        return _out;
+                    }
+                }
+            }
+
+            return null;
+        }
+
     }
 }
