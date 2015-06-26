@@ -35,6 +35,7 @@ namespace WCFWebServiceApplication1.DataObjects
         private string _name;
         private List<string> _states;
 
+
         [DataMember]
         public int Id { get { return _id; } set { _id = value; } }
 
