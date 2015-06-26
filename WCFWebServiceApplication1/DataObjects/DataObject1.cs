@@ -34,6 +34,7 @@ namespace WCFWebServiceApplication1.DataObjects
         private string _abrv;
         private string _name;
 
+        [DataMember]
         public int Id { get { return _id; } set { _id = value; } }
 
         [DataMember]

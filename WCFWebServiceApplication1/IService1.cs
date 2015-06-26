@@ -19,6 +19,11 @@ namespace WCFWebServiceApplication1
         [WebGet(UriTemplate="Data/{value}")]
         string GetData(string value);
 
+
+        [OperationContract]
+        [WebGet(UriTemplate = "DataJSON/{value})", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string GetDataJSON(string value);
+
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
@@ -32,6 +37,20 @@ namespace WCFWebServiceApplication1
         [OperationContract]
         [WebGet(UriTemplate = "State/{stateId}")]
         StateObject GetStateInfoById(string stateId);
+
+
+        // This version defined for JSON format.
+        // The consuming client (WCFWebServiceConsumer1) must consume using JSON formats
+        [OperationContract]
+        [WebGet(UriTemplate = "StateXML/{stateId}", RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml)]
+        StateObject GetStateInfoById_XML(string stateId);
+
+
+        // This version defined for JSON format.
+        // The consuming client (WCFWebServiceConsumer1) must consume using JSON formats
+        [OperationContract]
+        [WebGet(UriTemplate = "StateJSON/{stateId}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        StateObject GetStateInfoById_JSON(string stateId);
 
 
     }

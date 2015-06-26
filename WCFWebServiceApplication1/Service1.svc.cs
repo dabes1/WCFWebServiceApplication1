@@ -20,6 +20,10 @@ namespace WCFWebServiceApplication1
             return string.Format("You entered: {0}", value);
         }
 
+        public string GetDataJSON(string value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -51,6 +55,29 @@ namespace WCFWebServiceApplication1
         }
 
         public StateObject GetStateInfoById(string stateId)
+        {
+            StateObject _out = new StateObject();
+
+            _out.Id = Convert.ToInt32(stateId);
+            _out.Abrv = SQLAccess.GetAbr(_out.Id);
+            _out.Name = SQLAccess.GetName(_out.Id);
+
+            return _out;
+        }
+
+
+        public StateObject GetStateInfoById_XML(string stateId)
+        {
+            StateObject _out = new StateObject();
+
+            _out.Id = Convert.ToInt32(stateId);
+            _out.Abrv = SQLAccess.GetAbr(_out.Id);
+            _out.Name = SQLAccess.GetName(_out.Id);
+
+            return _out;
+        }
+
+        public StateObject GetStateInfoById_JSON(string stateId)
         {
             StateObject _out = new StateObject();
 
