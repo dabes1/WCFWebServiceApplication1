@@ -50,6 +50,7 @@ namespace WCFWebServiceApplication1.DataObjects
         public List<string> StateList { get { return _states; } set { _states = value; } }
 
         /*  DataTable not being correctly sent
+
         [DataMember]
         public DataTable DataTable {  get { return _dt; } set { _dt = value; } }
         */

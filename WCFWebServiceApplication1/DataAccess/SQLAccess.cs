@@ -104,7 +104,7 @@ namespace WCFWebServiceApplication1.DataAccess
             return null;
         }
 
-
+        /*
         public static DataTable GetDataTable()
         {
             DataTable _dt = new DataTable();
@@ -133,6 +133,7 @@ namespace WCFWebServiceApplication1.DataAccess
 
             return null;
         }
+        */
 
     }
 }
