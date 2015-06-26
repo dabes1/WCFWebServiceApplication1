@@ -86,6 +86,7 @@ namespace WCFWebServiceApplication1
             _out.Abrv = SQLAccess.GetAbr(_out.Id);
             _out.Name = SQLAccess.GetName(_out.Id);
             _out.StateList = SQLAccess.GetStatesList();
+            //_out.DataTable = SQLAccess.GetDataTable();  // DataTable not being correctly sent
 
             return _out;
         }

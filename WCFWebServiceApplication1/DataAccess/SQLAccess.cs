@@ -104,5 +104,35 @@ namespace WCFWebServiceApplication1.DataAccess
             return null;
         }
 
+
+        public static DataTable GetDataTable()
+        {
+            DataTable _dt = new DataTable();
+
+            _dt.Columns.Add("Id", typeof(int));
+            _dt.Columns.Add("Value1", typeof(string));
+            _dt.Columns.Add("Value2", typeof(string));
+
+            DataRow r = _dt.NewRow();
+            r["Id"] = 1;
+            r["Value1"] = "Row1 - First Value";
+            r["Value2"] = "Row1 - Second Value";
+            _dt.Rows.Add(r);
+
+            r = _dt.NewRow();
+            r["Id"] = 2;
+            r["Value1"] = "Row2 - First Value";
+            r["Value2"] = "Row2 - Second Value";
+            _dt.Rows.Add(r);
+
+            r = _dt.NewRow();
+            r["Id"] = 3;
+            r["Value1"] = "Row3 - First Value";
+            r["Value2"] = "Row3 - Second Value";
+            _dt.Rows.Add(r);
+
+            return null;
+        }
+
     }
 }
