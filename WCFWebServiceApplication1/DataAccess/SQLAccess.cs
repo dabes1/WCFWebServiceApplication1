@@ -74,6 +74,7 @@ namespace WCFWebServiceApplication1.DataAccess
         {
             List<string> _out = new List<string>();
 
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PrimaryDatabase"].ConnectionString);
             con.Open();
 
