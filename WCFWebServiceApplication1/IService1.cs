@@ -39,10 +39,16 @@ namespace WCFWebServiceApplication1
         StateObject GetStateInfoById(string stateId);
 
 
-        // This version defined for JSON format.
-        // The consuming client (WCFWebServiceConsumer1) must consume using JSON formats
+        // This version defined for XML format.
+        // The consuming client (WCFWebServiceConsumer1) must consume using XML formats
+        #region - The following attributes works with Visual Studio 2010 MVC4WebApplicationBasic
+        //[OperationContract]
+        //[WebGet(UriTemplate = "StateXML/{stateId}", BodyStyle = WebMessageBodyStyle.Bare, ResponseFormat = WebMessageFormat.Xml)]
+        #endregion
+        #region - The following attributes works with Visual Studio 2015 RC project: WCFWebServiceConsumer1 project as well as Visual Studio 2010 MVC4WebApplicationBasic
         [OperationContract]
         [WebGet(UriTemplate = "StateXML/{stateId}", RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml)]
+        #endregion
         StateObject GetStateInfoById_XML(string stateId);
 
 
