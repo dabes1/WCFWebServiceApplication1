@@ -19,7 +19,6 @@ namespace WCFWebServiceApplication1
         [WebGet(UriTemplate="Data/{value}")]
         string GetData(string value);
 
-
         [OperationContract]
         [WebGet(UriTemplate = "DataJSON/{value})", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string GetDataJSON(string value);
