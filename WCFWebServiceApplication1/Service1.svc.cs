@@ -65,6 +65,10 @@ namespace WCFWebServiceApplication1
             return _out; 
         }
 
+        public void InsertLoad(LoadObjects inLoad)
+        {
+            SQLAccess.InsertLoad(inLoad);
+        }
 
         public StateObject GetStateInfoById_XML(string stateId)
         {

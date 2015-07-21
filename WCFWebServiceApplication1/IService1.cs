@@ -38,6 +38,12 @@ namespace WCFWebServiceApplication1
         StateObject GetStateInfoById(string stateId);
 
 
+        [OperationContract]
+        [WebInvoke(Method = "POST")]
+        void InsertLoad(LoadObjects inLoad);
+
+
+
         // This version defined for XML format.
         // The consuming client (WCFWebServiceConsumer1) must consume using XML formats
         #region - The following attributes works with Visual Studio 2010 MVC4WebApplicationBasic
