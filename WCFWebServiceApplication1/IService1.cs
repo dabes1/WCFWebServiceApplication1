@@ -39,7 +39,7 @@ namespace WCFWebServiceApplication1
 
 
         [OperationContract]
-        [WebInvoke(Method = "POST")]
+        [WebInvoke(Method = "POST", UriTemplate = "ObjLoad")]
         void InsertLoad(LoadObjects inLoad);
 
 

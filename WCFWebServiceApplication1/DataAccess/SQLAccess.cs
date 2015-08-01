@@ -143,7 +143,7 @@ namespace WCFWebServiceApplication1.DataAccess
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                string InsertStr = "INSERT INTO Loads (Value1, Value2, Desc1, Desc2) VALUES ({0},{1},{2},{3})";
+                string InsertStr = "INSERT INTO ZLoads (Value1, Value2, Desc1, Desc2) VALUES ({0},{1},{2},{3})";
                 InsertStr = string.Format(InsertStr, inLoad.Value1, inLoad.Value2, inLoad.Desc1, inLoad.Desc2);
                 cmd.Connection = con;
                 cmd.CommandType = CommandType.Text;
