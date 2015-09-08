@@ -11,6 +11,7 @@ using WCFWebServiceApplication1.DataObjects;
 
 namespace WCFWebServiceApplication1
 {
+    // NOTE: State info was downloaded from www.statetable.com
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
@@ -65,11 +66,6 @@ namespace WCFWebServiceApplication1
             return _out; 
         }
 
-        public void InsertLoad(LoadObjects inLoad)
-        {
-            SQLAccess.InsertLoad(inLoad);
-        }
-
         public StateObject GetStateInfoById_XML(string stateId)
         {
             StateObject _out = new StateObject();
@@ -94,5 +90,43 @@ namespace WCFWebServiceApplication1
 
             return _out;
         }
+
+
+
+        #region - POSTING METHODS
+        public void InsertLoad(LoadObjects inLoad)
+        {
+            SQLAccess.InsertLoad(inLoad);
+        }
+
+        public string PostSampleMethod(System.IO.Stream inStream)
+        {
+            // convert Stream Data to StreamReader
+            System.IO.StreamReader reader = new System.IO.StreamReader(inStream);
+
+            // Read StreamReader data as string
+            string xmlString = reader.ReadToEnd();
+            string returnValue = xmlString;
+
+            // return the XMLString data
+            return returnValue;
+        }
+
+
+        public string PostSampleMethod_ObjLoad(System.IO.Stream inStream)
+        {
+            // convert Stream Data to StreamReader
+            System.IO.StreamReader reader = new System.IO.StreamReader(inStream);
+
+            // Read StreamReader data as string
+            string xmlString = reader.ReadToEnd();
+            string returnValue = xmlString;
+
+            // return the XMLString data
+            return returnValue;
+        }
+        #endregion
+
+
     }
 }

@@ -38,12 +38,6 @@ namespace WCFWebServiceApplication1
         StateObject GetStateInfoById(string stateId);
 
 
-        [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "ObjLoad")]
-        void InsertLoad(LoadObjects inLoad);
-
-
-
         // This version defined for XML format.
         // The consuming client (WCFWebServiceConsumer1) must consume using XML formats
         #region - The following attributes works with Visual Studio 2010 MVC4WebApplicationBasic
@@ -62,6 +56,44 @@ namespace WCFWebServiceApplication1
         [OperationContract]
         [WebGet(UriTemplate = "StateJSON/{stateId}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         StateObject GetStateInfoById_JSON(string stateId);
+
+
+
+
+
+        #region POST Methods
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            UriTemplate = "ObjLoad",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        void InsertLoad(LoadObjects inLoad);
+
+
+        // example taken directly from "http://www.c-sharpcorner.com/UploadFile/surya_bg2000/developing-wcf-restful-services-with-get-and-post-methods/"
+        [OperationContract(Name = "PostSampleMethod")]
+        [WebInvoke(Method = "POST",
+        UriTemplate = "PostSampleMethod/New")]
+        string PostSampleMethod(System.IO.Stream data);
+
+
+
+        // example taken directly from "http://www.c-sharpcorner.com/UploadFile/surya_bg2000/developing-wcf-restful-services-with-get-and-post-methods/"
+        [OperationContract(Name = "PostSampleMethod_ObjLoad")]
+        [WebInvoke(Method = "POST",
+        UriTemplate = "PostSampleMethodObjLoad/New")]
+        string PostSampleMethod_ObjLoad(System.IO.Stream data);
+
+        #endregion
+
+
+
+        #region PUT (Updates)
+        #endregion
+
+
+        #region DELETE
+        #endregion
 
 
     }
