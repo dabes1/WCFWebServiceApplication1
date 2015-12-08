@@ -62,6 +62,14 @@ namespace WCFWebServiceApplication1
 
 
         #region POST Methods
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            UriTemplate = "TestPost/{inDesc1}")]
+        void TestPost(string inDesc1);
+
+
+
         [OperationContract]
         [WebInvoke(Method = "POST",
             UriTemplate = "ObjLoad",

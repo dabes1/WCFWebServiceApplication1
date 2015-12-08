@@ -94,6 +94,14 @@ namespace WCFWebServiceApplication1
 
 
         #region - POSTING METHODS
+        public void TestPost(string inDesc1)
+        {
+            SQLAccess.InsertTest(inDesc1);
+        }
+
+
+
+
         public void InsertLoad(LoadObjects inLoad)
         {
             SQLAccess.InsertLoad(inLoad);

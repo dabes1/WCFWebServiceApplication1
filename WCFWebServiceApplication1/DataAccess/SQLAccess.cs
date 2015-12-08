@@ -136,6 +136,25 @@ namespace WCFWebServiceApplication1.DataAccess
         */
 
 
+
+        public static void InsertTest(string inDesc1)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PrimaryDatabase"].ConnectionString);
+            con.Open();
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string InsertStr = "INSERT INTO ZLoads (Value1, Value2, Desc1, Desc2) VALUES (1,0,{0},'Successful')";
+                InsertStr = string.Format(InsertStr, inDesc1);
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = InsertStr;
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
+
         public static void InsertLoad(WCFWebServiceApplication1.DataObjects.LoadObjects inLoad)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PrimaryDatabase"].ConnectionString);
